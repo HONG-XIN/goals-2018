@@ -47,3 +47,13 @@ func ihash(s string) uint32 {
 	h.Write([]byte(s))
 	return h.Sum32()
 }
+
+func doMapEach(
+	jobName string,
+	mapTaskNumber int,
+	inFile string,
+	reduceTaskNumber int,
+	mapF func(file string, contents string) []KeyValue,
+) {
+	var filename string = reduceName(jobName, mapTaskNumber, reduceTaskNumber)
+}
